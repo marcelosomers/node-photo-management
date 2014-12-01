@@ -106,17 +106,15 @@ fs.readdir(sourceDirectory, function(err, files) {
         var existingFilePath = sourceDirectory + "/" + file;
         var newFilePath = photosDestination + fileDate.year + "/" + fileDate.monthNumber + " - " + fileDate.monthName + "/" + file;
 
-        console.log(newFilePath);
-
         // Move the file
         // mkdirp: Make the required directories if they don't exist
         // clobber: Don't overwrite any files
         mv(existingFilePath, newFilePath, {mkdirp: true, clobber: false}, function(err) {
             if(err) {
                 throw err;
+            } else {
+                console.log("Moving " + file + " to " + newFilePath);   
             }
-
-            console.log("Moving " + file + " to " + newFilePath);
         });
     }
 
@@ -133,17 +131,15 @@ fs.readdir(sourceDirectory, function(err, files) {
         var existingFilePath = sourceDirectory + "/" + file;
         var newFilePath = videosDestination + fileDate.year + "/" + fileDate.monthNumber + " - " + fileDate.monthName + "/" + file;
 
-        console.log(newFilePath);
-
         // Move the file
         // mkdirp: Make the required directories if they don't exist
         // clobber: Don't overwrite any files
         mv(existingFilePath, newFilePath, {mkdirp: true, clobber: false}, function(err) {
             if(err) {
                 throw err;
+            } else {
+                console.log("Moving " + file + " to " + newFilePath);   
             }
-
-            console.log("Moving " + file + " to " + newFilePath);
         })
     }
 })
@@ -153,8 +149,6 @@ function getDateInfo(file) {
     var year = file.substring(0,4);
     var monthNumber = file.substring(5,7);
     var monthName = months[monthNumber - 1];
-
-    console.log(monthNumber);
 
     // Add a leading 0 to single digit months
     if (monthNumber.length === 1) {
