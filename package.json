@@ -1,0 +1,8 @@
+{
+  "name": "node-photo-management",
+  "version": "1.0.1",
+  "author": "Marcelo Somers",
+  "dependencies": {
+    "mv": "~2.0.3"
+  }
+}
