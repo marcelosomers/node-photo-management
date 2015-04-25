@@ -31,13 +31,18 @@ var videosDestination = "./";
  */
 var photoExtensions = [
     ".jpg",
+    ".JPG",
     ".gif",
-    ".png"
+    ".GIF",
+    ".png",
+    ".PNG"
 ]
 
 var videoExtensions = [
     ".mov",
+    ".MOV",
     ".mp4",
+    ".MP4",
     ".3gp"
 ]
 
